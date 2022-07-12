@@ -5,13 +5,23 @@
 class Kocli < Formula
   desc ""
   homepage ""
-  version "1.3.11"
-  depends_on :linux
+  version "1.3.12"
+
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/10xLabs/kocli/releases/download/v1.3.12/kocli_1.3.12_Darwin_arm64.tar.gz"
+      sha256 "57aa7d68aa427fcbda3c5a405f9588faf22d2f877973fc43849d1633bf4511b1"
+
+      def install
+        bin.install "ko"
+      end
+    end
+  end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/10xLabs/kocli/releases/download/v1.3.11/kocli_1.3.11_Linux_arm64.tar.gz"
-      sha256 "e2cdd55d9aba79203d3aec88db1b574b69d1f2d8df88481a9efa1c1415b43425"
+      url "https://github.com/10xLabs/kocli/releases/download/v1.3.12/kocli_1.3.12_Linux_arm64.tar.gz"
+      sha256 "110861a1982fd503e0c87996a8d385ce8b131e8f9518ff9cc7f1e147970adb8f"
 
       def install
         bin.install "ko"
