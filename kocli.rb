@@ -15,13 +15,11 @@ class Kocli < Formula
 
       def install
         bin.install "ko"
-        ...
       end
     end
   end
 
   head "https://github.com/10xLabs/kocli.git"
-  ...
 
   depends_on "git"
   depends_on "zsh" => :optional
