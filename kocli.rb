@@ -5,16 +5,16 @@
 class Kocli < Formula
   desc ""
   homepage ""
-  version "1.3.10"
+  version "1.3.11"
   depends_on :linux
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/10xLabs/kocli/releases/download/v1.3.10/kocli_1.3.10_Linux_arm64.tar.gz"
-      sha256 "96f5de1d8a69999656b62244ba97f360337fb0c66af373b6e5da420974e2a34f"
+      url "https://github.com/10xLabs/kocli/releases/download/v1.3.11/kocli_1.3.11_Linux_arm64.tar.gz"
+      sha256 "e2cdd55d9aba79203d3aec88db1b574b69d1f2d8df88481a9efa1c1415b43425"
 
       def install
-        bin.install "program"
+        bin.install "ko"
         ...
       end
     end
@@ -25,12 +25,4 @@ class Kocli < Formula
 
   depends_on "git"
   depends_on "zsh" => :optional
-
-  conflicts_with "svn"
-  conflicts_with "bash"
-
-  def post_install
-    etc.install "app-config.conf"
-    ...
-  end
 end
