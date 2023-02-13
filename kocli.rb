@@ -6,15 +6,15 @@ require_relative "lib/private"
 class Kocli < Formula
   desc ""
   homepage ""
-  version "1.6.0"
+  version "1.7.0-pre.0"
 
   depends_on "git"
   depends_on "zsh" => :optional
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/10xLabs/kocli/releases/download/v1.6.0/kocli_1.6.0_Darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "39f70ce3157a0677b04bc521639931744365663a49a6c89b7ef0bfd57474c141"
+      url "https://github.com/10xLabs/kocli/releases/download/v1.7.0-pre.0/kocli_1.7.0-pre.0_Darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "c1c8fdc1728f0e9904fabb616846f9503d22f9820c04e000d05b33a29862b6be"
 
       def install
         bin.install "ko"
@@ -24,8 +24,8 @@ class Kocli < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/10xLabs/kocli/releases/download/v1.6.0/kocli_1.6.0_Linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "0c616ca00105578e8d77478c067765250fc515aa0cd47f186c1fec9271da28a2"
+      url "https://github.com/10xLabs/kocli/releases/download/v1.7.0-pre.0/kocli_1.7.0-pre.0_Linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "083920bacfa39b8a943f146e34fabb0a7d18a705e7a640d688037136a25453b1"
 
       def install
         bin.install "ko"
