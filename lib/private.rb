@@ -39,7 +39,7 @@ class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
     # Test access to the repository
     GitHub.repository(@owner, @repo)
   rescue GitHub::API::HTTPNotFoundError
-    # We switched to GitHub::API::HTTPNotFoundError, 
+    # We switched to GitHub::API::HTTPNotFoundError,
     # because we can now handle bad credentials messages
     message = <<~EOS
       HOMEBREW_GITHUB_API_TOKEN can not access the repository: #{@owner}/#{@repo}
@@ -92,9 +92,11 @@ class GitHubPrivateRepositoryReleaseDownloadStrategy < GitHubPrivateRepositoryDo
     assets.first["id"]
   end
 
+  def resolve_url_basename_time_file_size(url, timeout: nil)
+    [download_url, "", Time.now, 0, false]
+  end
+
   def fetch_release_metadata
-    #release_url = "https://api.github.com/repos/#{@owner}/#{@repo}/releases/tags/#{@tag}"
-    #GitHub::API.open_rest(release_url)
     GitHub.get_release(@owner, @repo, @tag)
   end
 end
