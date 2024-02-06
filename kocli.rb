@@ -6,7 +6,7 @@ require_relative "lib/private"
 class Kocli < Formula
   desc "Internal Kolors CLI"
   homepage "https://github.com/10xLabs/kocli"
-  version "1.14.4"
+  version "1.15.0"
   license "MIT"
 
   depends_on "git"
@@ -14,16 +14,16 @@ class Kocli < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/10xLabs/kocli/releases/download/v1.14.4/kocli_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "d052f8fdbbf7748773195c2e37d8535e4192564bb372fce0e0d7fcc086860d5d"
+      url "https://github.com/10xLabs/kocli/releases/download/v1.15.0/kocli_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "a94243ebac316f564647fc7261407671d14f3d991e011d26d47062ede7543c1a"
 
       def install
         bin.install "ko"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/10xLabs/kocli/releases/download/v1.14.4/kocli_darwin_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "de866dd6361c6ee9573c6f480c45eee8963b4c8afe1235f28eedf2be87de3aa4"
+      url "https://github.com/10xLabs/kocli/releases/download/v1.15.0/kocli_darwin_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "d5111aff58f9c0deb7dd14797acfe086bbb59fa92639922acb0e76d45f7d5ee3"
 
       def install
         bin.install "ko"
@@ -33,16 +33,16 @@ class Kocli < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/10xLabs/kocli/releases/download/v1.14.4/kocli_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "2dc14ec492a10731913d48e57569bb2501a348fde2010f61eaf11aa703112a08"
+      url "https://github.com/10xLabs/kocli/releases/download/v1.15.0/kocli_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "1ebb891aadde1b8c846c82989ad891b92deba2fd90d08cdc61c97d0d71b8c02f"
 
       def install
         bin.install "ko"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/10xLabs/kocli/releases/download/v1.14.4/kocli_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "138ff06e70fd1aad6acea942faff697dce09a0192cc39cd886d93e7827c4c1ea"
+      url "https://github.com/10xLabs/kocli/releases/download/v1.15.0/kocli_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "2ef8a065044159bdd6630390b1bba8008c43e52cbe23cc37d45f113bf7e8250c"
 
       def install
         bin.install "ko"
